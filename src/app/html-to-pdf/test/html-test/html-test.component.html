@@ -1,15 +1,17 @@
 <button (click)="generatePDFFromClick()">Make PDF Of Below Content</button>
-<div id="pdf-content">
-  <table id="pdf-table">
-    <tr>
-      <th>Param</th>
-      <th>Boolean</th>
-      <th>Number</th>
-    </tr>
-    <tr *ngFor="let btd of basicTestData">
-      <td>{{ btd.param1 }}</td>
-      <td>{{ btd.bool1 }}</td>
-      <td>{{ btd.number1 }}</td>
-    </tr>
-  </table>
+<div id="html-to-pdf-generator">
+  <div id="pdf-content">
+    <table id="pdf-table">
+      <tr>
+        <th>Param</th>
+        <th>Boolean</th>
+        <th>Number</th>
+      </tr>
+      <tr *ngFor="let btd of basicTestData">
+        <td>{{ btd.param1 }}</td>
+        <td>{{ btd.bool1 }}</td>
+        <td>{{ btd.number1 }}</td>
+      </tr>
+    </table>
+  </div>
 </div>

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BasicTestDataObject } from '../test-data/test-data-object';
 import { CommonModule } from '@angular/common';
 import jsPDF from 'jspdf';
-import autoTable from 'jspdf-autotable'
+import autoTable from 'jspdf-autotable';
 
 @Component({
   selector: 'app-html-test',
@@ -19,6 +19,10 @@ export class HtmlTestComponent implements OnInit {
     this.createBasicTestData();
   }
 
+  public sendDataToParentComponent(): void {
+    const el = document.getElementById('pdf-content');
+  }
+
   /**
    * Created from: https://github.com/simonbengtsson/jsPDF-AutoTable
    */
@@ -27,15 +31,6 @@ export class HtmlTestComponent implements OnInit {
     console.log('CURRENT DOC', el)
     const pdfDoc = new jsPDF("p", "pt", "letter");
     autoTable(pdfDoc, { html: '#pdf-table' });
-    // pdfDoc.html(el as HTMLElement, 
-    //   {
-    //   callback: (doc) => {
-    //     doc.save('html-table-to-pdf.pdf');
-    //   },
-    //   x: 10,
-    //   y: 10,
-    //   autoPaging: 'text'
-    //   });
       pdfDoc.save('html-table-to-pdf.pdf');
   }
 
