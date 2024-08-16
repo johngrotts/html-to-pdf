@@ -18,6 +18,16 @@ export class HtmlToPdfComponent implements OnInit {
     console.log('ON IN IT: ', this, this.report )
   }
 
+  public sendDataToParentComponent(): void {
+    console.log('SEND TO PARENT: ', this)
+  }
+
+  public genPDFWithDataTable(): void {
+    const settings = new PDFPageSettings();
+    settings.orientation = 'p';
+    this.generatePDFWithDataTable('fileName', settings);
+  }
+
   /**
    * Creates PDF with clean broken table on page break from: https://github.com/simonbengtsson/jsPDF-AutoTable
    */
